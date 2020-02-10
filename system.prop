@@ -268,6 +268,10 @@ persist.vendor.radio.enable_temp_dds=true
 
 # property to latch unsignaled buffer
 debug.sf.latch_unsignaled=1
+
+#set property to avoid printing IMS_DataD message
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableIMSLogs=1
 # end of device/xiaomi/sm6150_common/system.prop
 #
 # from device/xiaomi/sm6150_common/common_rw.prop
