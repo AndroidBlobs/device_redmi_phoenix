@@ -3351,8 +3351,6 @@ case "$target" in
 
                 # Turn on sleep modes.
                 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-            echo 11 > /dev/cpuset/top-app/types
-            echo 1 > /dev/cpuset/background/types
           ;;
         esac
 
