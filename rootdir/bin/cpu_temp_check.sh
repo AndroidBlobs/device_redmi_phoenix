@@ -25,26 +25,25 @@ do
         fi
 done
 
-echo "测试前的温度：" >> /sdcard/cpu_temp.txt;
-echo -n "battery = " >> /sdcard/cpu_temp.txt;
+echo "before:" >> /sdcard/cpu_temp.txt;
+echo -n "battery before = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $battery` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo -n "quiet = " >> /sdcard/cpu_temp.txt;
+echo -n "quiet before = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $quiet` >> /sdcard/cpu_temp.txt;
 echo ", " >> /sdcard/cpu_temp.txt;
-echo -n "xo = " >> /sdcard/cpu_temp.txt;
+echo -n "xo before = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $xo` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo -n "conn = " >> /sdcard/cpu_temp.txt;
+echo -n "conn before = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $conn` >> /sdcard/cpu_temp.txt;
 echo ", " >> /sdcard/cpu_temp.txt;
-echo -n "cpu = " >> /sdcard/cpu_temp.txt;
+echo -n "cpu before = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $cpu` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo " " >>/sdcard/cpu_temp.txt;
-echo "测试前的频率:" >> /sdcard/cpu_temp.txt;
-echo -n "cpufreq = " >> /sdcard/cpu_temp.txt;
-echo `cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq` >> /sdcard/cpu_temp.txt;
+echo -n "cpufreq before = " >> /sdcard/cpu_temp.txt;
+echo -n `cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq` >> /sdcard/cpu_temp.txt;
+echo  ", " >> /sdcard/cpu_temp.txt;
 echo " " >>/sdcard/cpu_temp.txt;
 echo cpu6 1555200 > /sys/class/thermal/thermal_message/cpu_limits;
 
@@ -57,32 +56,30 @@ do
 done
 
 i=1;
-while [ i -le 30 ]
+while [ i -le 120 ]
 do
 	i=$i+1;
 	sleep 1;
 done
 
-echo "测试后温度：" >> /sdcard/cpu_temp.txt;
-echo -n "battery = " >> /sdcard/cpu_temp.txt;
+echo "after:" >> /sdcard/cpu_temp.txt;
+echo -n "battery after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $battery` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo -n "quiet = " >> /sdcard/cpu_temp.txt;
+echo -n "quiet after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $quiet` >> /sdcard/cpu_temp.txt;
 echo ", " >> /sdcard/cpu_temp.txt;
-echo -n "xo = " >> /sdcard/cpu_temp.txt;
+echo -n "xo after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $xo` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo -n "conn = " >> /sdcard/cpu_temp.txt;
+echo -n "conn after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $conn` >> /sdcard/cpu_temp.txt;
 echo ", " >> /sdcard/cpu_temp.txt;
-echo -n "cpu = " >> /sdcard/cpu_temp.txt;
+echo -n "cpu after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat $cpu` >> /sdcard/cpu_temp.txt;
 echo  ", " >> /sdcard/cpu_temp.txt;
-echo " " >>/sdcard/cpu_temp.txt;
-echo "测试后的频率:" >> /sdcard/cpu_temp.txt;
-echo -n "cpufreq = " >> /sdcard/cpu_temp.txt;
+echo -n "cpufreq after = " >> /sdcard/cpu_temp.txt;
 echo -n `cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq` >> /sdcard/cpu_temp.txt;
-echo " " >>/sdcard/cpu_temp.txt;
+echo  ", " >> /sdcard/cpu_temp.txt;
 sleep 1;
 start mi_thermald;

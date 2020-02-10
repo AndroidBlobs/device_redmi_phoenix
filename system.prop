@@ -23,6 +23,9 @@ ro.vendor.dfps.enable=true
 
 #for CTS fps
 ro.vendor.display.default_fps=60
+
+# qcom prop,idle timeout, non-idle switch to idle time
+vendor.display.idle_time=1100
 #
 # from device/xiaomi/sm6150_common/common_ro.prop
 #
@@ -173,6 +176,11 @@ ro.wlan.vendor=qcom
 ro.wlan.chip=39xx
 ro.wlan.mimo=0
 
+#sysprop used for WLAN for Android q version
+ro.hardware.wlan.vendor=qcom
+ro.hardware.wlan.chip=39xx
+ro.hardware.wlan.mimo=1
+
 #
 #snapdragon value add features
 #
@@ -264,6 +272,8 @@ debug.sf.latch_unsignaled=1
 #
 # from device/xiaomi/sm6150_common/common_rw.prop
 #
+#quick charge type detect
+persist.vendor.quick.charge=1
 #
 # from device/xiaomi/phoenix/special_rw.prop
 #
@@ -281,6 +291,6 @@ sys.displayfeature_hidl=true
 vendor.hbm.enable=true
 
 #quick charge type detect
-persist.quick.charge.detect=1
+persist.vendor.quick.charge=1
 
 #

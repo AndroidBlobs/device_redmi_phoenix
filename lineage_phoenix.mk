@@ -17,7 +17,7 @@ PRODUCT_MODEL := Redmi K30
 PRODUCT_GMS_CLIENTID_BASE := android-redmi
 TARGET_VENDOR := redmi
 TARGET_VENDOR_PRODUCT_NAME := phoenix
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="phoenix-user 10 QKQ1.190825.002 V11.0.5.0.QGHCNXM release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="phoenix-user 10 QKQ1.190825.002 9.12.19 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Redmi/phoenix/phoenix:10/QKQ1.190825.002/V11.0.5.0.QGHCNXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/phoenix/phoenix:10/QKQ1.190825.002/9.12.19:user/release-keys
